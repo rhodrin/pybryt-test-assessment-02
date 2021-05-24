@@ -1,8 +1,7 @@
 name: Do checks
 
 # Run when there's an update
-on:
-  push:
+on: push
 
 # This job runs pybryt on the notebook and then pushes an issue/PR
 jobs:
@@ -31,9 +30,14 @@ jobs:
     - name: Install dependencies
       run: |
           pip install pybryt torch matplotlib sklearn --user
+
     - name: Run tests
       run: |
           PYTHONPATH=$PWD/main python3 main/.github/checks.py main/Afternoon_Session_2_Diving_into_Optimization_and_Neural_Nets_Exercise_1.ipynb main/.github/solution.pkl report.md
+
+    - name: Run tests 2
+      run: |
+          PYTHONPATH=$PWD/main python3 main/.github/checks.py main/test.ipynb main/.github/test_ref.ipynb report2.md
 
     # Update Issue
     - name: Update Issue
