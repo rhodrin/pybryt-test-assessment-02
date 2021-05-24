@@ -37,7 +37,7 @@ jobs:
 
     - name: Run tests 2
       run: |
-          PYTHONPATH=$PWD/main python3 main/.github/checks.py main/test.ipynb main/.github/test_ref.ipynb report2.md
+          PYTHONPATH=$PWD/main python3 main/.github/checks.py main/test.ipynb main/.github/test_ref.pkl report2.md
 
     # Update Issue
     - name: Update Issue
